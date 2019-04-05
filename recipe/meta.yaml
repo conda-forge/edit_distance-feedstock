@@ -1,6 +1,6 @@
 {% set name = "edit_distance" %}
-{% set version = "1.0.1" %}
-{% set sha256 = "d40437c98873bc72338e713d61888efb71c4d6a4f317f31fa8d746d9206ba512" %}
+{% set version = "1.0.3" %}
+{% set sha256 = "0903d0baabee61f97254f483447928a97e6d84eae19b0224eecf31433e6f8b42" %}
 
 package:
   name: '{{ name|lower }}'
