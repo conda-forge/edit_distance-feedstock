@@ -1,6 +1,6 @@
 {% set name = "edit_distance" %}
-{% set version = "1.0.3" %}
-{% set sha256 = "0903d0baabee61f97254f483447928a97e6d84eae19b0224eecf31433e6f8b42" %}
+{% set version = "1.0.4" %}
+{% set sha256 = "89bc025a9683601cb08215672f49c513c8025b3c7e63a2f9f48fbcc034eae8a5" %}
 
 package:
   name: '{{ name|lower }}'
@@ -15,7 +15,7 @@ build:
   noarch: python
   entry_points:
     - edit-distance = edit_distance.code:main
-  script: python -m pip install --no-deps --ignore-installed . 
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
