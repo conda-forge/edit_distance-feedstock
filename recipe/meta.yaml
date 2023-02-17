@@ -1,10 +1,10 @@
 {% set name = "edit_distance" %}
-{% set version = "1.0.4" %}
-{% set sha256 = "89bc025a9683601cb08215672f49c513c8025b3c7e63a2f9f48fbcc034eae8a5" %}
+{% set version = "1.0.5" %}
+{% set sha256 = "45e9a974246ef6fb7e976b82075d623a602608d6d95537b409716b43e4863df6" %}
 
 package:
-  name: '{{ name|lower }}'
-  version: '{{ version }}'
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
@@ -35,7 +35,7 @@ about:
   home: https://github.com/belambert/editdistance
   license: BSD-2-Clause
   license_family: BSD
-  license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE.txt'
+  license_file: {{ environ["RECIPE_DIR"] }}/LICENSE.txt
   summary: Computing edit distance on arbitrary Python sequences.
   description: |
     Python module for computing edit distances and alignments between sequences.
