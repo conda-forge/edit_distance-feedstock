@@ -1,13 +1,13 @@
 {% set name = "edit_distance" %}
-{% set version = "1.0.4" %}
-{% set sha256 = "89bc025a9683601cb08215672f49c513c8025b3c7e63a2f9f48fbcc034eae8a5" %}
+{% set version = "1.0.7" %}
+{% set sha256 = "607cea124391e92008816439b667b10fc3314ff4d4aecafe7b86171659773270" %}
 
 package:
   name: '{{ name|lower }}'
   version: '{{ version }}'
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
