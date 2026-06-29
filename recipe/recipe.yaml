@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "1.0.7"
+  version: "1.0.9"
 
 package:
   name: edit_distance
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/e/edit_distance/edit_distance-${{ version }}.tar.gz
-  sha256: 607cea124391e92008816439b667b10fc3314ff4d4aecafe7b86171659773270
+  sha256: 074c29ec00c8e74ff2627759cf3d40aa2d95cd24a0cde4acc62c820df9f3af26
 
 build:
   number: 0
