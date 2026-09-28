@@ -17,13 +17,13 @@ build:
   script: ${{ PYTHON }} -m pip install . -vv
   python:
     entry_points:
-      - edit-distance = edit_distance:main
+      - edit-distance = edit_distance.edit_distance:main
 
 requirements:
   host:
     - python ${{ python_min }}.*
     - pip
-    - setuptools
+    - poetry-core
   run:
     - python >=${{ python_min }}
 
