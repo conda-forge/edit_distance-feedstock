@@ -28,11 +28,15 @@ requirements:
 test:
   requires:
     - python {{ python_min }}
+    - pytest
   imports:
     - edit_distance
+  source_files:
+    - test
   commands:
     - edit-distance ${RECIPE_DIR}/meta.yaml ${RECIPE_DIR}/meta.yaml  # [not win]
     - edit-distance %RECIPE_DIR%/meta.yaml %RECIPE_DIR%/meta.yaml  # [win]
+    - pytest test
 
 about:
   home: https://github.com/belambert/editdistance
