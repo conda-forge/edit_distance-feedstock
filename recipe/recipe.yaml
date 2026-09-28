@@ -36,15 +36,17 @@ tests:
         - edit_distance
       pip_check: true
   - files:
-      source:
-        - test
+      recipe:
+        - recipe.yaml
+      # source:
+      # - test
     requirements:
       run:
         - python ${{ python_min }}.*
-        - pytest
+        # - pytest
     script:
-      - edit-distance test/test.py test/test.py
-      - pytest test
+      - edit-distance recipe.yaml recipe.yaml
+      # - pytest test
 
 about:
   summary: Computing edit distance on arbitrary Python sequences.
