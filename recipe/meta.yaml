@@ -14,7 +14,7 @@ build:
   number: 0
   noarch: python
   entry_points:
-    - edit-distance = edit_distance.code:main
+    - edit-distance = edit_distance:main
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
