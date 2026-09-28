@@ -5,7 +5,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/edit_distance-f
 
 Home: https://github.com/belambert/editdistance
 
-Package license: BSD-2-Clause
+Package license: Apache-2.0
 
 Summary: Computing edit distance on arbitrary Python sequences.
 
@@ -25,7 +25,6 @@ The library API is modeled after difflib.SequenceMatcher. This is very
 similar to difflib, except that this module computes edit distance
 (Levenshtein distance) rather than the Ratcliff and Oberhelp method
 that Python's difflib uses.
-
 
 Current build status
 ====================
