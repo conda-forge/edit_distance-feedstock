@@ -1,0 +1,73 @@
+schema_version: 1
+
+context:
+  version: "1.0.5"
+
+package:
+  name: edit_distance
+  version: ${{ version }}
+
+source:
+  url: https://files.pythonhosted.org/packages/source/e/edit_distance/edit_distance-${{ version }}.tar.gz
+  sha256: 45e9a974246ef6fb7e976b82075d623a602608d6d95537b409716b43e4863df6
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+  python:
+    entry_points:
+      - edit-distance = edit_distance:main
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools
+  run:
+    - python >=${{ python_min }}
+
+tests:
+  - python:
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+      imports:
+        - edit_distance
+      pip_check: true
+  - files:
+      source:
+        - test
+    requirements:
+      run:
+        - python ${{ python_min }}.*
+        - pytest
+    script:
+      - edit-distance test/test.py test/test.py
+      - pytest test
+
+about:
+  summary: Computing edit distance on arbitrary Python sequences.
+  license: Apache-2.0
+  license_file: LICENSE
+  description: |
+    Python module for computing edit distances and alignments between sequences.
+    I needed a way to compute edit distances between sequences in Python. I
+    wasn't able to find any appropriate libraries that do this so I wrote my
+    own. There appear to be numerous edit distance libraries available for
+    computing edit distances between two strings, but not between two sequences.
+    This is written entirely in Python. This implementation could likely be
+    optimized to be faster within Python. And could probably be much faster if
+    implemented in C.
+    The library API is modeled after difflib.SequenceMatcher. This is very
+    similar to difflib, except that this module computes edit distance
+    (Levenshtein distance) rather than the Ratcliff and Oberhelp method
+    that Python's difflib uses.
+  homepage: https://github.com/belambert/editdistance
+  repository: https://github.com/belambert/edit-distance
+  documentation: http://edit-distance.readthedocs.io/en/latest/
+
+extra:
+  recipe-maintainers:
+    - CurtLH
+
